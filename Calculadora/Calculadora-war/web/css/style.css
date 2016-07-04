@@ -1,0 +1,116 @@
+body, div, a {
+    padding:0;
+    margin:0;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;    
+}
+
+a {
+	position: relative;
+	cursor: pointer;
+}
+
+#calculator {
+	background-color: white;
+	width: 310px;
+	height: 100%;
+	margin: 10px auto;
+	padding: 5px;
+	padding-bottom: 20px;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.4);
+}
+
+#screen {
+    height: 70px;
+    width: 95%;
+    background-color: black;
+    color: #47DBE2;
+    margin:auto;
+    margin-bottom: 5px;
+    text-align: right;
+    font-size: 60px;
+    padding: 0 5px;
+    border-radius: 5px;
+	cursor: default;
+}
+
+#numbers, #operators {
+	margin: auto;	
+}
+
+#numbers a, #operators a {
+	display: inline-block;
+	text-align: center;	
+	float: left;
+	text-decoration: none;
+    transition: all 25ms linear;
+}
+
+#operators a {
+	width: 44px;
+	height: 43px;
+	color: black;
+	font-size: 32px;
+	padding: 2px;
+	margin: 5px 6px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(#DCDCDC));
+	background: -moz-linear-gradient(top, #EDEDED, #DCDCDC);
+	border-radius: 50% / 14%;
+	box-shadow: 
+    0px 3px 0px 0px #B6B6B6,
+    0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+	border : 1px solid #C4C4C4;  
+}
+
+#operators a:active {
+	top: 2px;
+  	box-shadow: 0px 0px 0px 0px rgba(100, 173, 175, 1),
+    0px 1px 6px 0px rgba(0, 0, 0, 0.4);
+}
+
+#operators a:hover {
+    border: 1px solid #919191;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#DCDCDC));
+	background: -moz-linear-gradient(top, #FFFFFF, #DCDCDC);
+}
+
+#numbers a {
+	width: 51px;
+	height: 44px;
+	color: white;
+	font-size: 32pt;
+	padding: 10px;
+	margin: 8px 15px;
+	border-radius: 50% / 14%;
+	background: linear-gradient(to bottom, rgb(124,197,201) 0%,rgb(135,216,220) 100%);
+	border : 1px solid #64adaf;  
+	box-shadow: 
+    0px 6px 0px 0px rgba(100, 173, 175, 1),
+    0px 5px 12px 0px rgba(0, 0, 0, 0.4);
+}
+
+#numbers a:active {
+	top: 4px;
+  	box-shadow: 0px 2px 0px 0px rgba(100, 173, 175, 1),
+    0px 5px 6px 0px rgba(0, 0, 0, 0.4);
+}
+
+#numbers a:hover {
+	background: linear-gradient(to bottom, #A7DEE2 0%,rgb(135,216,220) 100%);
+	border: 1px solid #818181;
+}
+
+#numbers #clear {
+
+}
+
+#clearall {
+
+}

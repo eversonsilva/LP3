@@ -1,0 +1,84 @@
+CREATE TABLE autor(
+    id_autor BIGINT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+    nomeAutor VARCHAR(40) NOT NULL
+);
+
+CREATE TABLE emprestimo(
+    id_emprestimo BIGINT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+    dataEmprestimo DATE NOT NULL,
+    id_usuario BIGINT NOT NULL,
+    id_obra BIGINT NOT NULL
+);
+
+CREATE TABLE obra(
+    id_obra BIGINT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+    nomeObra VARCHAR(35) NOT NULL,
+    id_autor BIGINT NOT NULL
+);
+
+CREATE TABLE usuario(
+    id_usuario BIGINT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+    nomeUsuario VARCHAR(35) NOT NULL,
+    userUsuario VARCHAR(35) NOT NULL,
+    senhaUsuario VARCHAR(32) NOT NULL,
+    id_tipoUsuario BIGINT NOT NULL
+);
+
+CREATE TABLE tipoUsuario(
+    id_tipoUsuario BIGINT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+    nomeTipoUsuario VARCHAR(35) NOT NULL
+);
+
+ALTER TABLE usuario -- Sera a chave estrangeira, logo não precisa de alto incremento
+ADD FOREIGN KEY(id_tipoUsuario)
+REFERENCES tipoUsuario(id_tipoUsuario)
+ON DELETE CASCADE;
+
+ALTER TABLE obra -- Sera a chave estrangeira, logo não precisa de alto incremento
+ADD FOREIGN KEY(id_autor)
+REFERENCES autor(id_autor)
+ON DELETE CASCADE;
+
+ALTER TABLE emprestimo -- Sera a chave estrangeira, logo não precisa de alto incremento
+ADD FOREIGN KEY(id_usuario)
+REFERENCES usuario(id_usuario)
+ON DELETE CASCADE;
+
+ALTER TABLE emprestimo -- Sera a chave estrangeira, logo não precisa de alto incremento
+ADD FOREIGN KEY(id_obra)
+REFERENCES obra(id_obra)
+ON DELETE CASCADE;
+
+--INSERE AUTOR
+INSERT INTO autor(nomeAutor) VALUES('Gonçalves Dias');
+INSERT INTO autor(nomeAutor) VALUES('Lima Barreto');
+INSERT INTO autor(nomeAutor) VALUES('Olavo Bilac');
+INSERT INTO autor(nomeAutor) VALUES('Santos Dumont');
+
+-- INSERE TIPOS DE USUÁRIOS
+INSERT INTO tipoUsuario(nomeTipoUsuario) VALUES('Colecionador');
+INSERT INTO tipoUsuario(nomeTipoUsuario) VALUES('Administrador');
+
+-- INSERE USUÁRIO
+INSERT INTO usuario(nomeUsuario, userUsuario, senhaUsuario, id_tipoUsuario) VALUES('Gabriel Aparecido Outor','gabriel','123',1);
+INSERT INTO usuario(nomeUsuario, userUsuario, senhaUsuario, id_tipoUsuario) VALUES('Pedro Henrique Cacique Braga','cacique','123',1);
+INSERT INTO usuario(nomeUsuario, userusuario, senhaUsuario, id_tipoUsuario) VALUES('Colecionador','colecionador','123',1);
+INSERT INTO usuario(nomeUsuario, userUsuario, senhaUsuario, id_tipoUsuario) VALUES('Admin do Museu da Língua Portuguesa','administrador1','123',2);
+INSERT INTO usuario(nomeUsuario, userUsuario, senhaUsuario, id_tipoUsuario) VALUES('Admin do Museu do Ipiranga','administrador2','123',2);
+
+-- INSERE OBRA COM SEUS RESPECTIVOS AUTOR
+INSERT INTO obra(id_autor,nomeObra) VALUES (1,'Canção do Exílio');
+INSERT INTO obra(id_autor,nomeObra) VALUES (1,'Meditação');
+INSERT INTO obra(id_autor,nomeObra) VALUES (1,'Segundos Cantos');
+INSERT INTO obra(id_autor,nomeObra) VALUES (2,'Vida Urbana');
+INSERT INTO obra(id_autor,nomeObra) VALUES (2,'Diário Íntimo');
+INSERT INTO obra(id_autor,nomeObra) VALUES (2,'Bagatelas');
+INSERT INTO obra(id_autor,nomeObra) VALUES (3,'Cantos Pátrios');
+INSERT INTO obra(id_autor,nomeObra) VALUES (3,'Tratado de versificação');
+INSERT INTO obra(id_autor,nomeObra) VALUES (4,'O que eu vi, o que nós veremos');
+
+-- INSERE EMPRESTIMO
+INSERT INTO emprestimo(id_obra, id_usuario, dataEmprestimo) VALUES(1,4,'2016-03-20');
+INSERT INTO emprestimo(id_obra, id_usuario, dataEmprestimo) VALUES(3,5,'2016-03-19');
+INSERT INTO emprestimo(id_obra, id_usuario, dataEmprestimo) VALUES(6,5,'2016-03-18');
+INSERT INTO emprestimo(id_obra, id_usuario, dataEmprestimo) VALUES(7,4,'2016-03-20');

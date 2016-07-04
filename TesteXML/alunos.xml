@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alunos>
+    <aluno tia="12345">
+        <nome>Everson Carvalho da Silva</nome>
+        <faculdade>Faculdade de Computação e Informatica</faculdade>
+        <curso>Ciência da Computação</curso>
+        <etapa>4</etapa>
+        <endereco>
+            <rua numero="532">Rua Ribeirópolis</rua>
+            <complemento>Ap 82 Torre 1</complemento>
+            <bairro>Vila Independência</bairro>
+            <cidade estado="SP">São Paulo</cidade>
+        </endereco>
+    </aluno>
+    <aluno tia="54321">
+        <nome>Lucas</nome>
+        <faculdade>Universidade Nove de Julho</faculdade>
+        <curso>Educação Fisica</curso>
+        <etapa>1</etapa>
+        <endereco>
+            <rua numero="235">Pelorinho</rua>
+            <complemento>Ap1 Torre 82</complemento>
+            <bairro>Zona Leste</bairro>
+            <cidade estado="RJ">Rio de Janeiro</cidade>
+        </endereco>
+    </aluno>
+</alunos>

@@ -1,0 +1,42 @@
+<section id="black-bar">
+    <img id="homePage" src="img/iconeMuseu.png" alt="HomePage">
+</section>
+
+<nav class="menu">
+    <ul class="primary">
+        <li><a href="FrontController?command=Home">Home</a></li>
+        <li><a href="FrontController?command=Autor&action=visualizar">Autor</a>
+            <ul class="sub">
+                <li><a href="FrontController?command=Autor&action=alterar">Alterar</a></li>
+                <li><a href="FrontController?command=Autor&action=inserir">Inserir</a></li>
+                <li><a href="FrontController?command=Autor&action=remover">Remover</a></li>
+                <li><a href="FrontController?command=Autor&action=visualizar">Visualizar</a></li>
+            </ul>
+        </li>
+        <li><a href="FrontController?command=Emprestimo&action=visualizar">Empréstimo</a>
+            <ul class="sub">
+                <li><a href="FrontController?command=Emprestimo&action=alterar">Alterar</a></li>
+                <li><a href="FrontController?command=Emprestimo&action=inserir">Inserir</a></li>
+                <li><a href="FrontController?command=Emprestimo&action=remover">Remover</a></li>
+                <li><a href="FrontController?command=Emprestimo&action=visualizar">Visualizar</a></li>
+            </ul>
+        </li>
+        <li><a href="FrontController?command=Obra&action=visualizar">Obra</a>
+            <ul class="sub">
+                <li><a href="FrontController?command=Obra&action=alterar">Alterar</a></li>
+                <li><a href="FrontController?command=Obra&action=inserir">Inserir</a></li>
+                <li><a href="FrontController?command=Obra&action=remover">Remover</a></li>
+                <li><a href="FrontController?command=Obra&action=visualizar">Visualizar</a></li>
+            </ul>
+        </li>
+        <li><a href="FrontController?command=Usuario&action=visualizar">Usuário</a>
+            <ul class="sub">
+                <li><a href="FrontController?command=Usuario&action=alterar">Alterar</a></li>
+                <li><a href="FrontController?command=Usuario&action=inserir">Inserir</a></li>
+                <li><a href="FrontController?command=Usuario&action=remover">Remover</a></li>
+                <li><a href="FrontController?command=Usuario&action=visualizar">Visualizar</a></li>
+            </ul>
+        </li>
+        <li><a href=FrontController?command=Login&action=logout">Logout</a></li>
+    </ul>
+</nav>

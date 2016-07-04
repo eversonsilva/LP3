@@ -1,0 +1,28 @@
+.circle {
+    border-radius: 50%;
+    width: 80px;
+    height: 100px; 
+    float: left;
+    padding: 5px;
+}
+
+section {
+    width: 400px;
+    height: 200px;
+    background-color: #fff;
+    text-align: center;
+    float: left;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+body{
+    background: #34AFE8;
+    
+}
+
+h1{
+    font-family: "impact";
+}
